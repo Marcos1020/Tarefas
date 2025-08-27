@@ -218,8 +218,8 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## 👨‍💻 Autor
 
 **DevPleno2**
-- Email: contato@devpleno.com
-- Website: https://devpleno.com
+- Email: marcossanches710@gmail.com
+- linkedin: https://www.linkedin.com/in/marcos-vinicius-campos-ab2a691a7/
 
 ## 🙏 Agradecimentos
 

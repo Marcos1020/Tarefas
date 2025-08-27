@@ -1,0 +1,17 @@
+version: '3'
+volumes:
+  data_volume:
+    name: mysql_tarefas_data
+
+services:
+  mysql:
+    image: mysql:8.0.19
+    command: --lower_case_table_names=1
+    container_name: mysql_tarefas
+    ports:
+      - "3306:3306"
+    volumes:
+      - data_volume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Tarefas

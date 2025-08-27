@@ -1,0 +1,73 @@
+### Teste da API de Tarefas
+
+### 1. Health Check
+GET http://localhost:9293/api/tarefas/health
+
+### 2. Criar nova tarefa
+POST http://localhost:9293/api/tarefas
+Content-Type: application/json
+
+{
+  "titulo": "Implementar API REST",
+  "descricao": "Desenvolver endpoints para gerenciamento de tarefas",
+  "prioridade": "ALTA",
+  "usuarioResponsavel": "João Silva",
+  "categoria": "Desenvolvimento",
+  "estimativaHoras": 8
+}
+
+### 3. Criar segunda tarefa
+POST http://localhost:9293/api/tarefas
+Content-Type: application/json
+
+{
+  "titulo": "Documentar API",
+  "descricao": "Criar documentação completa da API",
+  "prioridade": "MEDIA",
+  "usuarioResponsavel": "Maria Santos",
+  "categoria": "Documentação",
+  "estimativaHoras": 4
+}
+
+### 4. Listar todas as tarefas
+GET http://localhost:9293/api/tarefas?page=0&size=10
+
+### 5. Buscar tarefa por ID
+GET http://localhost:9293/api/tarefas/1
+
+### 6. Buscar tarefas por status
+GET http://localhost:9293/api/tarefas/status/PENDENTE
+
+### 7. Buscar tarefas por prioridade
+GET http://localhost:9293/api/tarefas/prioridade/ALTA
+
+### 8. Buscar tarefas por usuário
+GET http://localhost:9293/api/tarefas/usuario/João Silva
+
+### 9. Buscar tarefas por texto
+GET http://localhost:9293/api/tarefas/busca?texto=API&page=0&size=10
+
+### 10. Marcar tarefa como em andamento
+PATCH http://localhost:9293/api/tarefas/1/andamento
+
+### 11. Marcar tarefa como concluída
+PATCH http://localhost:9293/api/tarefas/1/concluir
+
+### 12. Atualizar tarefa
+PUT http://localhost:9293/api/tarefas/2
+Content-Type: application/json
+
+{
+  "descricao": "Criar documentação completa da API com exemplos",
+  "prioridade": "ALTA",
+  "estimativaHoras": 6
+}
+
+### 13. Obter estatísticas
+GET http://localhost:9293/api/tarefas/estatisticas
+
+### 14. Buscar tarefas vencidas
+GET http://localhost:9293/api/tarefas/vencidas
+
+### 15. Excluir tarefa
+DELETE http://localhost:9293/api/tarefas/2

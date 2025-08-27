@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.documents.tarefas.TarefasApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-08-26T18:56:30" hostname="MARKIN10SANCHES" time="0.924">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.documents.tarefas.TarefasApplicationTests" time="0.924"/>
+  <system-out><![CDATA[15:56:14.831 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.documents.tarefas.TarefasApplicationTests]: TarefasApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:56:14.989 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.documents.tarefas.TarefasApplication for test class com.documents.tarefas.TarefasApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.5)
+
+2025-08-26T15:56:16.120-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.TarefasApplicationTests      : Starting TarefasApplicationTests using Java 17.0.9 with PID 19816 (started by 55179 in C:\Users\55179\Documents\Trabalho\myProjects\tarefas)
+2025-08-26T15:56:16.122-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.TarefasApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2025-08-26T15:56:19.485-03:00  INFO 19816 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-26T15:56:20.053-03:00  INFO 19816 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 504 ms. Found 1 JPA repository interfaces.
+2025-08-26T15:56:20.815-03:00  INFO 19816 --- [    Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1dd2e3c2-05f6-31e6-91fd-bc8e78c10dea
+2025-08-26T15:56:21.836-03:00  INFO 19816 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-26T15:56:22.074-03:00  INFO 19816 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2025-08-26T15:56:22.081-03:00  INFO 19816 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2025-08-26T15:56:22.712-03:00  INFO 19816 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-26T15:56:22.796-03:00  INFO 19816 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-26T15:56:23.198-03:00  INFO 19816 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d0e703a
+2025-08-26T15:56:23.201-03:00  INFO 19816 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-26T15:56:23.294-03:00  WARN 19816 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-26T15:56:24.717-03:00  INFO 19816 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-26T15:56:24.797-03:00  INFO 19816 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-26T15:56:25.632-03:00  INFO 19816 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-26T15:56:28.037-03:00  WARN 19816 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-26T15:56:30.004-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.TarefasApplicationTests      : Started TarefasApplicationTests in 14.637 seconds (process running for 16.707)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

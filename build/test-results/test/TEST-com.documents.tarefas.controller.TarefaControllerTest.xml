@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.documents.tarefas.controller.TarefaControllerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-08-26T18:56:33" hostname="MARKIN10SANCHES" time="1.018">
+  <properties/>
+  <testcase name="excluirTarefa_DeveRetornar204QuandoExcluidaComSucesso()" classname="com.documents.tarefas.controller.TarefaControllerTest" time="0.26"/>
+  <testcase name="listarTarefas_DeveRetornar200ComPaginaVazia()" classname="com.documents.tarefas.controller.TarefaControllerTest" time="0.089"/>
+  <testcase name="buscarPorId_DeveRetornar200QuandoTarefaExiste()" classname="com.documents.tarefas.controller.TarefaControllerTest" time="0.236"/>
+  <testcase name="criarTarefa_DeveRetornar201QuandoCriadaComSucesso()" classname="com.documents.tarefas.controller.TarefaControllerTest" time="0.221"/>
+  <testcase name="marcarComoConcluida_DeveRetornar200QuandoSucesso()" classname="com.documents.tarefas.controller.TarefaControllerTest" time="0.035"/>
+  <testcase name="healthCheck_DeveRetornar200()" classname="com.documents.tarefas.controller.TarefaControllerTest" time="0.015"/>
+  <testcase name="criarTarefa_DeveRetornar400QuandoDadosInvalidos()" classname="com.documents.tarefas.controller.TarefaControllerTest" time="0.12"/>
+  <system-out><![CDATA[2025-08-26T15:56:31.016-03:00  INFO 19816 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.documents.tarefas.controller.TarefaControllerTest]: TarefaControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-08-26T15:56:31.094-03:00  INFO 19816 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.documents.tarefas.TarefasApplication for test class com.documents.tarefas.controller.TarefaControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.5)
+
+2025-08-26T15:56:31.631-03:00  INFO 19816 --- [    Test worker] c.d.t.controller.TarefaControllerTest    : Starting TarefaControllerTest using Java 17.0.9 with PID 19816 (started by 55179 in C:\Users\55179\Documents\Trabalho\myProjects\tarefas)
+2025-08-26T15:56:31.632-03:00  INFO 19816 --- [    Test worker] c.d.t.controller.TarefaControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2025-08-26T15:56:32.786-03:00  INFO 19816 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-08-26T15:56:32.786-03:00  INFO 19816 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-08-26T15:56:32.805-03:00  INFO 19816 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 8 ms
+2025-08-26T15:56:33.333-03:00  INFO 19816 --- [    Test worker] c.d.t.controller.TarefaControllerTest    : Started TarefaControllerTest in 2.234 seconds (process running for 20.037)
+2025-08-26T15:56:33.540-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.controller.TarefaController  : Recebendo requisição para excluir tarefa com ID: 1
+2025-08-26T15:56:33.678-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.controller.TarefaController  : Recebendo requisição para listar tarefas - Page: 0, Size: 10, Sort: dataCriacao
+2025-08-26T15:56:33.754-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.controller.TarefaController  : Recebendo requisição para buscar tarefa com ID: 1
+2025-08-26T15:56:34.184-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.controller.TarefaController  : Recebendo requisição para criar tarefa: Nova Tarefa
+2025-08-26T15:56:34.234-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.controller.TarefaController  : Recebendo requisição para marcar tarefa como concluída. ID: 1
+2025-08-26T15:56:34.381-03:00 ERROR 19816 --- [    Test worker] c.d.t.exception.GlobalExceptionHandler   : Erro de validação: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.documents.tarefas.dto.TarefaDTO> com.documents.tarefas.controller.TarefaController.criarTarefa(com.documents.tarefas.dto.CriarTarefaRequest) with 2 errors: [Field error in object 'criarTarefaRequest' on field 'titulo': rejected value []; codes [Size.criarTarefaRequest.titulo,Size.titulo,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [criarTarefaRequest.titulo,titulo]; arguments []; default message [titulo],100,3]; default message [O título deve ter entre 3 e 100 caracteres]] [Field error in object 'criarTarefaRequest' on field 'titulo': rejected value []; codes [NotBlank.criarTarefaRequest.titulo,NotBlank.titulo,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [criarTarefaRequest.titulo,titulo]; arguments []; default message [titulo]]; default message [O título é obrigatório]] 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
