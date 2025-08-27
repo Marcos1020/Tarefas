@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.documents.tarefas.service.TarefaServiceTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-08-26T18:56:34" hostname="MARKIN10SANCHES" time="0.559">
+<testsuite name="com.documents.tarefas.service.TarefaServiceTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-08-27T18:29:48" hostname="MARKIN10SANCHES" time="0.428">
   <properties/>
-  <testcase name="buscarPorId_DeveRetornarTarefaQuandoExiste()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.466"/>
+  <testcase name="buscarPorId_DeveRetornarTarefaQuandoExiste()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.328"/>
   <testcase name="excluirTarefa_DeveLancarExcecaoQuandoTarefaNaoExiste()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.012"/>
-  <testcase name="excluirTarefa_DeveExcluirTarefaComSucesso()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.013"/>
-  <testcase name="marcarComoConcluida_DeveLancarExcecaoQuandoTarefaNaoExiste()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.005"/>
-  <testcase name="listarTarefas_DeveRetornarPaginaDeTarefas()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.015"/>
-  <testcase name="criarTarefa_DeveCriarTarefaComSucesso()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.009"/>
-  <testcase name="criarTarefa_DeveLancarExcecaoQuandoTituloJaExiste()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.005"/>
-  <testcase name="buscarPorId_DeveLancarExcecaoQuandoTarefaNaoExiste()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.008"/>
-  <testcase name="buscarPorStatus_DeveRetornarTarefasDoStatus()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.004"/>
-  <testcase name="marcarComoConcluida_DeveMarcarTarefaComoConcluida()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.011"/>
-  <system-out><![CDATA[2025-08-26T15:56:34.850-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Buscando tarefa com ID: 1
-2025-08-26T15:56:34.897-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Excluindo tarefa com ID: 999
-2025-08-26T15:56:34.912-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Excluindo tarefa com ID: 1
-2025-08-26T15:56:34.912-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Tarefa excluída com sucesso. ID: 1
-2025-08-26T15:56:34.919-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Marcando tarefa como concluída. ID: 999
-2025-08-26T15:56:34.930-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Listando tarefas com paginação: Page request [number: 0, size 10, sort: UNSORTED]
-2025-08-26T15:56:34.947-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Criando nova tarefa: Nova Tarefa
-2025-08-26T15:56:34.947-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Tarefa criada com sucesso. ID: 1
-2025-08-26T15:56:34.952-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Criando nova tarefa: Nova Tarefa
-2025-08-26T15:56:34.962-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Buscando tarefa com ID: 999
-2025-08-26T15:56:34.967-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Buscando tarefas com status: PENDENTE
-2025-08-26T15:56:34.978-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Marcando tarefa como concluída. ID: 1
-2025-08-26T15:56:34.980-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Tarefa marcada como concluída. ID: 1
+  <testcase name="excluirTarefa_DeveExcluirTarefaComSucesso()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.014"/>
+  <testcase name="marcarComoConcluida_DeveLancarExcecaoQuandoTarefaNaoExiste()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.013"/>
+  <testcase name="listarTarefas_DeveRetornarPaginaDeTarefas()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.016"/>
+  <testcase name="criarTarefa_DeveCriarTarefaComSucesso()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.005"/>
+  <testcase name="criarTarefa_DeveLancarExcecaoQuandoTituloJaExiste()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.006"/>
+  <testcase name="buscarPorId_DeveLancarExcecaoQuandoTarefaNaoExiste()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.003"/>
+  <testcase name="buscarPorStatus_DeveRetornarTarefasDoStatus()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.005"/>
+  <testcase name="marcarComoConcluida_DeveMarcarTarefaComoConcluida()" classname="com.documents.tarefas.service.TarefaServiceTest" time="0.013"/>
+  <system-out><![CDATA[2025-08-27T15:29:48.433-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Buscando tarefa com ID: 1
+2025-08-27T15:29:48.478-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Excluindo tarefa com ID: 999
+2025-08-27T15:29:48.494-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Excluindo tarefa com ID: 1
+2025-08-27T15:29:48.495-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Tarefa excluída com sucesso. ID: 1
+2025-08-27T15:29:48.503-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Marcando tarefa como concluída. ID: 999
+2025-08-27T15:29:48.527-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Listando tarefas com paginação: Page request [number: 0, size 10, sort: UNSORTED]
+2025-08-27T15:29:48.534-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Criando nova tarefa: Nova Tarefa
+2025-08-27T15:29:48.534-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Tarefa criada com sucesso. ID: 1
+2025-08-27T15:29:48.541-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Criando nova tarefa: Nova Tarefa
+2025-08-27T15:29:48.547-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Buscando tarefa com ID: 999
+2025-08-27T15:29:48.552-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Buscando tarefas com status: PENDENTE
+2025-08-27T15:29:48.566-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Marcando tarefa como concluída. ID: 1
+2025-08-27T15:29:48.566-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Tarefa marcada como concluída. ID: 1
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

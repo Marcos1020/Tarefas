@@ -170,10 +170,4 @@ public class TarefaController {
         Object estatisticas = tarefaService.obterEstatisticas();
         return ResponseEntity.ok(estatisticas);
     }
-
-    @GetMapping("/health")
-    @Operation(summary = "Health check", description = "Endpoint para verificar se a API está funcionando")
-    public ResponseEntity<String> healthCheck() {
-        return ResponseEntity.ok("API de Tarefas funcionando normalmente!");
-    }
 }

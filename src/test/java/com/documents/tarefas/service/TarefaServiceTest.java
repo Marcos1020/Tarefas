@@ -64,6 +64,8 @@ class TarefaServiceTest {
         tarefaDTO.setDescricao("Descrição da tarefa de teste");
         tarefaDTO.setStatus(StatusTarefa.PENDENTE);
         tarefaDTO.setPrioridade(PrioridadeTarefa.MEDIA);
+        tarefaDTO.setDataCriacao("01/01/2024");
+        tarefaDTO.setDataAtualizacao("01/01/2024");
     }
     
     @Test

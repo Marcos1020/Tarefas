@@ -14,8 +14,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.time.LocalDateTime;
-
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -51,7 +49,8 @@ class TarefaControllerTest {
         tarefaDTO.setStatus(StatusTarefa.PENDENTE);
         tarefaDTO.setPrioridade(PrioridadeTarefa.ALTA);
         tarefaDTO.setUsuarioResponsavel("João Silva");
-        tarefaDTO.setDataCriacao(LocalDateTime.now());
+        tarefaDTO.setDataCriacao("01/01/2024");
+        tarefaDTO.setDataAtualizacao("01/01/2024");
     }
     
     @Test
@@ -107,7 +106,7 @@ class TarefaControllerTest {
         TarefaDTO tarefaConcluida = new TarefaDTO();
         tarefaConcluida.setId(1L);
         tarefaConcluida.setStatus(StatusTarefa.CONCLUIDA);
-        tarefaConcluida.setDataConclusao(LocalDateTime.now());
+        tarefaConcluida.setDataConclusao("01/01/2024");
         
         when(tarefaService.marcarComoConcluida(1L)).thenReturn(tarefaConcluida);
 

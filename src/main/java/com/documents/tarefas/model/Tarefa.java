@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -44,13 +46,16 @@ public class Tarefa {
     
     @Column(name = "data_criacao")
     @CreationTimestamp
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime dataCriacao;
     
     @Column(name = "data_atualizacao")
     @UpdateTimestamp
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime dataAtualizacao;
     
     @Column(name = "data_conclusao")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime dataConclusao;
     
     @Column(name = "usuario_responsavel", length = 100)

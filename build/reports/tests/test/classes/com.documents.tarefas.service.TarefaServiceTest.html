@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.548s</div>
+<div class="counter">0.415s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,32 +79,32 @@
 </thead>
 <tr>
 <td class="success">buscarPorId_DeveLancarExcecaoQuandoTarefaNaoExiste()</td>
-<td class="success">0.008s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">buscarPorId_DeveRetornarTarefaQuandoExiste()</td>
-<td class="success">0.466s</td>
+<td class="success">0.328s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">buscarPorStatus_DeveRetornarTarefasDoStatus()</td>
-<td class="success">0.004s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">criarTarefa_DeveCriarTarefaComSucesso()</td>
-<td class="success">0.009s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">criarTarefa_DeveLancarExcecaoQuandoTituloJaExiste()</td>
 <td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">criarTarefa_DeveCriarTarefaComSucesso()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">criarTarefa_DeveLancarExcecaoQuandoTituloJaExiste()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">excluirTarefa_DeveExcluirTarefaComSucesso()</td>
-<td class="success">0.013s</td>
+<td class="success">0.014s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -114,17 +114,17 @@
 </tr>
 <tr>
 <td class="success">listarTarefas_DeveRetornarPaginaDeTarefas()</td>
-<td class="success">0.015s</td>
+<td class="success">0.016s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">marcarComoConcluida_DeveLancarExcecaoQuandoTarefaNaoExiste()</td>
-<td class="success">0.005s</td>
+<td class="success">0.013s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">marcarComoConcluida_DeveMarcarTarefaComoConcluida()</td>
-<td class="success">0.011s</td>
+<td class="success">0.013s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -132,19 +132,19 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2025-08-26T15:56:34.850-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Buscando tarefa com ID: 1
-2025-08-26T15:56:34.897-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Excluindo tarefa com ID: 999
-2025-08-26T15:56:34.912-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Excluindo tarefa com ID: 1
-2025-08-26T15:56:34.912-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Tarefa excluída com sucesso. ID: 1
-2025-08-26T15:56:34.919-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Marcando tarefa como concluída. ID: 999
-2025-08-26T15:56:34.930-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Listando tarefas com paginação: Page request [number: 0, size 10, sort: UNSORTED]
-2025-08-26T15:56:34.947-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Criando nova tarefa: Nova Tarefa
-2025-08-26T15:56:34.947-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Tarefa criada com sucesso. ID: 1
-2025-08-26T15:56:34.952-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Criando nova tarefa: Nova Tarefa
-2025-08-26T15:56:34.962-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Buscando tarefa com ID: 999
-2025-08-26T15:56:34.967-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Buscando tarefas com status: PENDENTE
-2025-08-26T15:56:34.978-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Marcando tarefa como concluída. ID: 1
-2025-08-26T15:56:34.980-03:00  INFO 19816 --- [    Test worker] c.d.tarefas.service.TarefaService        : Tarefa marcada como concluída. ID: 1
+<pre>2025-08-27T15:29:48.433-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Buscando tarefa com ID: 1
+2025-08-27T15:29:48.478-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Excluindo tarefa com ID: 999
+2025-08-27T15:29:48.494-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Excluindo tarefa com ID: 1
+2025-08-27T15:29:48.495-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Tarefa excluída com sucesso. ID: 1
+2025-08-27T15:29:48.503-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Marcando tarefa como concluída. ID: 999
+2025-08-27T15:29:48.527-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Listando tarefas com paginação: Page request [number: 0, size 10, sort: UNSORTED]
+2025-08-27T15:29:48.534-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Criando nova tarefa: Nova Tarefa
+2025-08-27T15:29:48.534-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Tarefa criada com sucesso. ID: 1
+2025-08-27T15:29:48.541-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Criando nova tarefa: Nova Tarefa
+2025-08-27T15:29:48.547-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Buscando tarefa com ID: 999
+2025-08-27T15:29:48.552-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Buscando tarefas com status: PENDENTE
+2025-08-27T15:29:48.566-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Marcando tarefa como concluída. ID: 1
+2025-08-27T15:29:48.566-03:00  INFO 10944 --- [    Test worker] c.d.tarefas.service.TarefaService        : Tarefa marcada como concluída. ID: 1
 </pre>
 </span>
 </div>
@@ -156,7 +156,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.4</a> at 26 de ago. de 2025 15:56:35</p>
+<a href="http://www.gradle.org">Gradle 8.4</a> at 27 de ago. de 2025 15:29:48</p>
 </div>
 </div>
 </body>

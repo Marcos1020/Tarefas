@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -248,9 +249,19 @@ public class TarefaService {
         dto.setDescricao(tarefa.getDescricao());
         dto.setStatus(tarefa.getStatus());
         dto.setPrioridade(tarefa.getPrioridade());
-        dto.setDataCriacao(tarefa.getDataCriacao());
-        dto.setDataAtualizacao(tarefa.getDataAtualizacao());
-        dto.setDataConclusao(tarefa.getDataConclusao());
+        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        
+        if (tarefa.getDataCriacao() != null) {
+            dto.setDataCriacao(tarefa.getDataCriacao().format(formatter));
+        }
+        if (tarefa.getDataAtualizacao() != null) {
+            dto.setDataAtualizacao(tarefa.getDataAtualizacao().format(formatter));
+        }
+        if (tarefa.getDataConclusao() != null) {
+            dto.setDataConclusao(tarefa.getDataConclusao().format(formatter));
+        }
+        
         dto.setUsuarioResponsavel(tarefa.getUsuarioResponsavel());
         dto.setCategoria(tarefa.getCategoria());
         dto.setTags(tarefa.getTags());

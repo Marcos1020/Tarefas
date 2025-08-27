@@ -9,8 +9,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,9 +29,9 @@ public class TarefaDTO {
     @NotNull(message = "A prioridade é obrigatória")
     private PrioridadeTarefa prioridade;
     
-    private LocalDateTime dataCriacao;
-    private LocalDateTime dataAtualizacao;
-    private LocalDateTime dataConclusao;
+    private String dataCriacao;
+    private String dataAtualizacao;
+    private String dataConclusao;
     private String usuarioResponsavel;
     private String categoria;
     private String tags;
