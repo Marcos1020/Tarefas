@@ -163,35 +163,12 @@ spring:
 
 ### Variáveis de Ambiente
 ```bash
+
 export PORT=9293
 export DB_HOST=localhost
 export DB_NAME=Tarefas
 export DB_USER=root
 export DB_PASS=root
-```
-
-## 📈 Monitoramento
-
-### Health Check
-```bash
-curl http://localhost:9293/api/tarefas/health
-```
-
-### Estatísticas
-```bash
-curl http://localhost:9293/api/tarefas/estatisticas
-```
-
-## 🚀 Deploy
-
-### Heroku
-```bash
-# Configurar variáveis de ambiente
-heroku config:set SPRING_PROFILES_ACTIVE=prod
-heroku config:set DB_URL=jdbc:mysql://...
-
-# Deploy
-git push heroku main
 ```
 
 ### Docker
