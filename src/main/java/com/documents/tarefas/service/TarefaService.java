@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -224,17 +225,17 @@ public class TarefaService {
     }
 
     @Transactional(readOnly = true)
-    public Object obterEstatisticas() {
+    public Map<String, Object> obterEstatisticas() {
         log.info("Obtendo estatísticas das tarefas");
         
         List<Object[]> statusCount = tarefaRepository.countByStatus();
         List<Object[]> prioridadeCount = tarefaRepository.countByPrioridade();
         
-        return new Object() {
-            public final List<Object[]> status = statusCount;
-            public final List<Object[]> prioridade = prioridadeCount;
-            public final long total = tarefaRepository.count();
-        };
+        return Map.of(
+                "status", statusCount,
+                "prioridade", prioridadeCount,
+                "total", tarefaRepository.count()
+        );
     }
 
     private Tarefa getTarefa(CriarTarefaRequest request) {
