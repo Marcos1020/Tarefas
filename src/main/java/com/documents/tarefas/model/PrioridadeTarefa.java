@@ -5,13 +5,13 @@ public enum PrioridadeTarefa {
     MEDIA("Média"),
     ALTA("Alta"),
     URGENTE("Urgente");
-    
+
     private final String descricao;
-    
+
     PrioridadeTarefa(String descricao) {
         this.descricao = descricao;
     }
-    
+
     public String getDescricao() {
         return descricao;
     }

@@ -6,13 +6,13 @@ public enum StatusTarefa {
     CONCLUIDA("Concluída"),
     CANCELADA("Cancelada"),
     PAUSADA("Pausada");
-    
+
     private final String descricao;
-    
+
     StatusTarefa(String descricao) {
         this.descricao = descricao;
     }
-    
+
     public String getDescricao() {
         return descricao;
     }

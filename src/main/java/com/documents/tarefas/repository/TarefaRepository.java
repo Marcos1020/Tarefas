@@ -16,58 +16,57 @@ import java.util.Optional;
 
 @Repository
 public interface TarefaRepository extends JpaRepository<Tarefa, Long> {
-    
-    
-    List<Tarefa> findByStatus(StatusTarefa status);
 
-    List<Tarefa> findByPrioridade(PrioridadeTarefa prioridade);
+       List<Tarefa> findByStatus(StatusTarefa status);
 
-    List<Tarefa> findByUsuarioResponsavel(String usuarioResponsavel);
+       List<Tarefa> findByPrioridade(PrioridadeTarefa prioridade);
 
-    List<Tarefa> findByCategoria(String categoria);
+       List<Tarefa> findByUsuarioResponsavel(String usuarioResponsavel);
 
-    List<Tarefa> findByStatusAndPrioridade(StatusTarefa status, PrioridadeTarefa prioridade);
-    
-    @Query("SELECT t FROM Tarefa t WHERE t.status = :status ORDER BY " +
-           "CASE t.prioridade " +
-           "WHEN 'URGENTE' THEN 1 " +
-           "WHEN 'ALTA' THEN 2 " +
-           "WHEN 'MEDIA' THEN 3 " +
-           "WHEN 'BAIXA' THEN 4 " +
-           "END, t.dataCriacao ASC")
-    List<Tarefa> findByStatusOrderByPrioridadeAndDataCriacao(@Param("status") StatusTarefa status);
+       List<Tarefa> findByCategoria(String categoria);
 
-    @Query("SELECT t FROM Tarefa t WHERE t.dataCriacao BETWEEN :dataInicio AND :dataFim")
-    List<Tarefa> findByPeriodo(@Param("dataInicio") LocalDateTime dataInicio, 
-                               @Param("dataFim") LocalDateTime dataFim);
+       List<Tarefa> findByStatusAndPrioridade(StatusTarefa status, PrioridadeTarefa prioridade);
 
-    @Query("SELECT t FROM Tarefa t WHERE LOWER(t.titulo) LIKE LOWER(CONCAT('%', :texto, '%')) " +
-           "OR LOWER(t.descricao) LIKE LOWER(CONCAT('%', :texto, '%'))")
-    Page<Tarefa> findByTexto(@Param("texto") String texto, Pageable pageable);
+       @Query("SELECT t FROM Tarefa t WHERE t.status = :status ORDER BY " +
+                     "CASE t.prioridade " +
+                     "WHEN 'URGENTE' THEN 1 " +
+                     "WHEN 'ALTA' THEN 2 " +
+                     "WHEN 'MEDIA' THEN 3 " +
+                     "WHEN 'BAIXA' THEN 4 " +
+                     "END, t.dataCriacao ASC")
+       List<Tarefa> findByStatusOrderByPrioridadeAndDataCriacao(@Param("status") StatusTarefa status);
 
-    @Query("SELECT t FROM Tarefa t WHERE t.status = 'PENDENTE' " +
-           "AND t.estimativaHoras IS NOT NULL " +
-           "AND t.dataCriacao < :dataLimite")
-    List<Tarefa> findTarefasVencidas(@Param("dataLimite") LocalDateTime dataLimite);
+       @Query("SELECT t FROM Tarefa t WHERE t.dataCriacao BETWEEN :dataInicio AND :dataFim")
+       List<Tarefa> findByPeriodo(@Param("dataInicio") LocalDateTime dataInicio,
+                     @Param("dataFim") LocalDateTime dataFim);
 
-    @Query("SELECT t.status, COUNT(t) FROM Tarefa t GROUP BY t.status")
-    List<Object[]> countByStatus();
+       @Query("SELECT t FROM Tarefa t WHERE LOWER(t.titulo) LIKE LOWER(CONCAT('%', :texto, '%')) " +
+                     "OR LOWER(t.descricao) LIKE LOWER(CONCAT('%', :texto, '%'))")
+       Page<Tarefa> findByTexto(@Param("texto") String texto, Pageable pageable);
 
-    @Query("SELECT t.prioridade, COUNT(t) FROM Tarefa t GROUP BY t.prioridade")
-    List<Object[]> countByPrioridade();
+       @Query("SELECT t FROM Tarefa t WHERE t.status = 'PENDENTE' " +
+                     "AND t.estimativaHoras IS NOT NULL " +
+                     "AND t.dataCriacao < :dataLimite")
+       List<Tarefa> findTarefasVencidas(@Param("dataLimite") LocalDateTime dataLimite);
 
-    @Query("SELECT t FROM Tarefa t WHERE " +
-           "(:status IS NULL OR t.status = :status) AND " +
-           "(:prioridade IS NULL OR t.prioridade = :prioridade) AND " +
-           "(:usuario IS NULL OR t.usuarioResponsavel = :usuario) AND " +
-           "(:categoria IS NULL OR t.categoria = :categoria)")
-    Page<Tarefa> findByFiltros(@Param("status") StatusTarefa status,
-                                @Param("prioridade") PrioridadeTarefa prioridade,
-                                @Param("usuario") String usuario,
-                                @Param("categoria") String categoria,
-                                Pageable pageable);
+       @Query("SELECT t.status, COUNT(t) FROM Tarefa t GROUP BY t.status")
+       List<Object[]> countByStatus();
 
-    boolean existsByTitulo(String titulo);
+       @Query("SELECT t.prioridade, COUNT(t) FROM Tarefa t GROUP BY t.prioridade")
+       List<Object[]> countByPrioridade();
 
-    Optional<Tarefa> findByTitulo(String titulo);
+       @Query("SELECT t FROM Tarefa t WHERE " +
+                     "(:status IS NULL OR t.status = :status) AND " +
+                     "(:prioridade IS NULL OR t.prioridade = :prioridade) AND " +
+                     "(:usuario IS NULL OR t.usuarioResponsavel = :usuario) AND " +
+                     "(:categoria IS NULL OR t.categoria = :categoria)")
+       Page<Tarefa> findByFiltros(@Param("status") StatusTarefa status,
+                     @Param("prioridade") PrioridadeTarefa prioridade,
+                     @Param("usuario") String usuario,
+                     @Param("categoria") String categoria,
+                     Pageable pageable);
+
+       boolean existsByTitulo(String titulo);
+
+       Optional<Tarefa> findByTitulo(String titulo);
 }

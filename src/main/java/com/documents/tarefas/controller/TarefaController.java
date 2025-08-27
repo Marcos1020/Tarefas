@@ -29,9 +29,9 @@ import java.util.List;
 @Tag(name = "Tarefas", description = "API para gerenciamento de tarefas")
 @CrossOrigin(origins = "*")
 public class TarefaController {
-    
+
     private final TarefaService tarefaService;
-    
+
     @PostMapping
     @Operation(summary = "Criar nova tarefa", description = "Cria uma nova tarefa no sistema")
     public ResponseEntity<TarefaDTO> criarTarefa(@Valid @RequestBody CriarTarefaRequest request) {
@@ -39,7 +39,7 @@ public class TarefaController {
         TarefaDTO tarefa = tarefaService.criarTarefa(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(tarefa);
     }
-    
+
     @GetMapping("/{id}")
     @Operation(summary = "Buscar tarefa por ID", description = "Retorna uma tarefa específica pelo seu ID")
     public ResponseEntity<TarefaDTO> buscarPorId(@PathVariable Long id) {
@@ -47,7 +47,7 @@ public class TarefaController {
         TarefaDTO tarefa = tarefaService.buscarPorId(id);
         return ResponseEntity.ok(tarefa);
     }
-    
+
     @GetMapping
     @Operation(summary = "Listar tarefas", description = "Lista todas as tarefas com paginação e filtros")
     public ResponseEntity<Page<TarefaDTO>> listarTarefas(
@@ -59,22 +59,22 @@ public class TarefaController {
             @Parameter(description = "Prioridade da tarefa") @RequestParam(required = false) PrioridadeTarefa prioridade,
             @Parameter(description = "Usuário responsável") @RequestParam(required = false) String usuario,
             @Parameter(description = "Categoria da tarefa") @RequestParam(required = false) String categoria) {
-        
+
         log.info("Recebendo requisição para listar tarefas - Page: {}, Size: {}, Sort: {}", page, size, sortBy);
-        
+
         Sort.Direction direction = "desc".equalsIgnoreCase(sortDir) ? Sort.Direction.DESC : Sort.Direction.ASC;
         Pageable pageable = PageRequest.of(page, size, Sort.by(direction, sortBy));
-        
+
         Page<TarefaDTO> tarefas;
         if (status != null || prioridade != null || usuario != null || categoria != null) {
             tarefas = tarefaService.listarTarefasComFiltros(status, prioridade, usuario, categoria, pageable);
         } else {
             tarefas = tarefaService.listarTarefas(pageable);
         }
-        
+
         return ResponseEntity.ok(tarefas);
     }
-    
+
     @GetMapping("/status/{status}")
     @Operation(summary = "Buscar tarefas por status", description = "Lista todas as tarefas com um status específico")
     public ResponseEntity<List<TarefaDTO>> buscarPorStatus(@PathVariable StatusTarefa status) {
@@ -82,7 +82,7 @@ public class TarefaController {
         List<TarefaDTO> tarefas = tarefaService.buscarPorStatus(status);
         return ResponseEntity.ok(tarefas);
     }
-    
+
     @GetMapping("/prioridade/{prioridade}")
     @Operation(summary = "Buscar tarefas por prioridade", description = "Lista todas as tarefas com uma prioridade específica")
     public ResponseEntity<List<TarefaDTO>> buscarPorPrioridade(@PathVariable PrioridadeTarefa prioridade) {
@@ -90,7 +90,7 @@ public class TarefaController {
         List<TarefaDTO> tarefas = tarefaService.buscarPorPrioridade(prioridade);
         return ResponseEntity.ok(tarefas);
     }
-    
+
     @GetMapping("/usuario/{usuario}")
     @Operation(summary = "Buscar tarefas por usuário", description = "Lista todas as tarefas de um usuário específico")
     public ResponseEntity<List<TarefaDTO>> buscarPorUsuario(@PathVariable String usuario) {
@@ -98,31 +98,31 @@ public class TarefaController {
         List<TarefaDTO> tarefas = tarefaService.buscarPorUsuario(usuario);
         return ResponseEntity.ok(tarefas);
     }
-    
+
     @GetMapping("/busca")
     @Operation(summary = "Buscar tarefas por texto", description = "Busca tarefas por texto no título ou descrição")
     public ResponseEntity<Page<TarefaDTO>> buscarPorTexto(
             @Parameter(description = "Texto para busca") @RequestParam String texto,
             @Parameter(description = "Número da página") @RequestParam(defaultValue = "0") int page,
             @Parameter(description = "Tamanho da página") @RequestParam(defaultValue = "10") int size) {
-        
+
         log.info("Recebendo requisição para buscar tarefas com texto: {}", texto);
         Pageable pageable = PageRequest.of(page, size);
         Page<TarefaDTO> tarefas = tarefaService.buscarPorTexto(texto, pageable);
         return ResponseEntity.ok(tarefas);
     }
-    
+
     @PutMapping("/{id}")
     @Operation(summary = "Atualizar tarefa", description = "Atualiza uma tarefa existente")
     public ResponseEntity<TarefaDTO> atualizarTarefa(
-            @PathVariable Long id, 
+            @PathVariable Long id,
             @Valid @RequestBody AtualizarTarefaRequest request) {
-        
+
         log.info("Recebendo requisição para atualizar tarefa com ID: {}", id);
         TarefaDTO tarefa = tarefaService.atualizarTarefa(id, request);
         return ResponseEntity.ok(tarefa);
     }
-    
+
     @PatchMapping("/{id}/concluir")
     @Operation(summary = "Marcar tarefa como concluída", description = "Marca uma tarefa como concluída")
     public ResponseEntity<TarefaDTO> marcarComoConcluida(@PathVariable Long id) {
@@ -130,7 +130,7 @@ public class TarefaController {
         TarefaDTO tarefa = tarefaService.marcarComoConcluida(id);
         return ResponseEntity.ok(tarefa);
     }
-    
+
     @PatchMapping("/{id}/andamento")
     @Operation(summary = "Marcar tarefa como em andamento", description = "Marca uma tarefa como em andamento")
     public ResponseEntity<TarefaDTO> marcarComoEmAndamento(@PathVariable Long id) {
@@ -138,7 +138,7 @@ public class TarefaController {
         TarefaDTO tarefa = tarefaService.marcarComoEmAndamento(id);
         return ResponseEntity.ok(tarefa);
     }
-    
+
     @PatchMapping("/{id}/pendente")
     @Operation(summary = "Marcar tarefa como pendente", description = "Marca uma tarefa como pendente")
     public ResponseEntity<TarefaDTO> marcarComoPendente(@PathVariable Long id) {
@@ -146,7 +146,7 @@ public class TarefaController {
         TarefaDTO tarefa = tarefaService.marcarComoPendente(id);
         return ResponseEntity.ok(tarefa);
     }
-    
+
     @DeleteMapping("/{id}")
     @Operation(summary = "Excluir tarefa", description = "Exclui uma tarefa do sistema")
     public ResponseEntity<Void> excluirTarefa(@PathVariable Long id) {
@@ -154,7 +154,7 @@ public class TarefaController {
         tarefaService.excluirTarefa(id);
         return ResponseEntity.noContent().build();
     }
-    
+
     @GetMapping("/vencidas")
     @Operation(summary = "Buscar tarefas vencidas", description = "Lista tarefas que podem estar vencidas")
     public ResponseEntity<List<TarefaDTO>> buscarTarefasVencidas() {
@@ -162,7 +162,7 @@ public class TarefaController {
         List<TarefaDTO> tarefas = tarefaService.buscarTarefasVencidas();
         return ResponseEntity.ok(tarefas);
     }
-    
+
     @GetMapping("/estatisticas")
     @Operation(summary = "Obter estatísticas", description = "Retorna estatísticas das tarefas")
     public ResponseEntity<Object> obterEstatisticas() {
@@ -170,7 +170,7 @@ public class TarefaController {
         Object estatisticas = tarefaService.obterEstatisticas();
         return ResponseEntity.ok(estatisticas);
     }
-    
+
     @GetMapping("/health")
     @Operation(summary = "Health check", description = "Endpoint para verificar se a API está funcionando")
     public ResponseEntity<String> healthCheck() {
