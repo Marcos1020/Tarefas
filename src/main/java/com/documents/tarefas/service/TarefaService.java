@@ -210,7 +210,7 @@ public class TarefaService {
     public List<TarefaDTO> buscarTarefasVencidas() {
         log.info("Buscando tarefas vencidas");
 
-        LocalDateTime dataLimite = LocalDateTime.now().minusDays(7); // Tarefas criadas há mais de 7 dias
+        LocalDateTime dataLimite = LocalDateTime.now().minusDays(7);
         List<Tarefa> tarefas = tarefaRepository.findTarefasVencidas(dataLimite);
 
         return tarefas.stream().map(this::converterParaDTO).collect(Collectors.toList());
